@@ -1,0 +1,26 @@
+server:
+  port: 8083
+  
+#activiti:
+#  database-schema-update: true
+#  check-process-definitions: true
+#  process-definition-location-prefix: "classpath*:/processes/*.bpmn"
+#  history-level: full
+#  db-history-used: flase #配置生成history表,默认false,只会生成17张表
+
+spring:
+ datasource:
+   driverClassName : com.mysql.jdbc.Driver
+   url : jdbc:mysql://localhost:3306/activiti?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+   username : root
+   password : root
+   
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+  type-aliases-package: com.dao.mapper
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   
+   
+logging:
+ level:
+  root: info
